@@ -4,10 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  // const [link, setLink] = useState("https://pokeapi.co/api/v2/pokemon");
   const [data, setData] = useState({} as any);
-  // const [prevDisable, setPrevDisable] = useState(true);
-  // const [nextDisable, setNextDisable] = useState(false);
   const [listPokemon, setListPokemon] = useState([]);
 
   useEffect(() => {
@@ -21,7 +18,6 @@ export default function Home() {
       setListPokemon(res.data.results);
     });
   };
-
   const nextPage = () => {
     data.next != null ? getData(data.next!) : null;
   };

@@ -7,11 +7,9 @@ const NotFound = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      // router.go(-1)
-      // router.go(1)
       router.push("/");
     }, 3000);
-  }, []);
+  });
 
   return (
     <main className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
@@ -21,8 +19,8 @@ const NotFound = () => {
           Page not found
         </h1>
         <p className="mt-6 text-base leading-7 text-gray-600">
-          Sorry, we couldn’t find the page you’re looking for. You'll be redirect to home
-          page in 3s.
+          Sorry, we couldn&apos;t find the page you&apos;re looking for. You&apos;ll be
+          redirect to home page in 3s.
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <Link

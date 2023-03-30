@@ -9,21 +9,21 @@ function PokemonDetail() {
   const { id } = router.query;
 
   useEffect(() => {
-    console.log(id);
+    const getData = async (link: any) => {
+      await axiosRepository
+        .getPokemonDetail("https://pokeapi.co/api/v2/pokemon/" + link)
+        .then((res) => {
+          console.log(res.data);
+          setData(res.data);
+        });
+    };
     if (router.isReady) {
       // getData("https://pokeapi.co/api/v2/pokemon/" + id);
       getData(id);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }
   }, [router.isReady]);
 
-  const getData = async (link: any) => {
-    await axiosRepository
-      .getPokemonDetail("https://pokeapi.co/api/v2/pokemon/" + link)
-      .then((res) => {
-        console.log(res.data);
-        setData(res.data);
-      });
-  };
   return (
     <div>
       <Navbar />
