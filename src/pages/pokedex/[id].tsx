@@ -20,8 +20,8 @@ function PokemonDetail() {
     if (router.isReady) {
       // getData("https://pokeapi.co/api/v2/pokemon/" + id);
       getData(id);
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.isReady]);
 
   return (
