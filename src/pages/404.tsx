@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
-const NotFound = () => {
+const Custom404 = () => {
   const router = useRouter();
 
   useEffect(() => {
@@ -35,4 +35,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default Custom404;
