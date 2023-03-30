@@ -46,7 +46,10 @@ export default function Home() {
           List
           {listPokemon.map((pokemon: any) => {
             return (
-              <div className="mb-3 bg-gray-500 text-white rounded p-2">
+              <div
+                className="mb-3 bg-gray-500 text-white rounded p-2"
+                key={pokemon.url.match(/\/(\d+)\/$/)[1]}
+              >
                 <Link
                   // href={pokemon.url}
                   href={"/pokedex/" + pokemon.url.match(/\/(\d+)\/$/)[1]}
