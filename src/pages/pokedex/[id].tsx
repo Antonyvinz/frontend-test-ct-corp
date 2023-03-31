@@ -31,8 +31,7 @@ function PokemonDetail() {
       <Navbar />
       {loading ? null : (
         <>
-          fuck
-          {/* <div>{data.species.name}</div>
+          <div>{data.species.name}</div>
 
           <div className="bg-slate-400 rounded text-white p-6">
             Abilities ({data.abilities.length}) :
@@ -43,7 +42,7 @@ function PokemonDetail() {
                 </div>
               );
             })}
-          </div> */}
+          </div>
         </>
       )}
     </div>
