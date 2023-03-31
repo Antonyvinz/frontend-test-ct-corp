@@ -5,33 +5,47 @@ import { useEffect, useState } from "react";
 
 function PokemonDetail() {
   const [data, setData] = useState({} as any);
+  const [loading, setLoading] = useState(true);
   const router = useRouter();
   const { id } = router.query;
 
   useEffect(() => {
-    const getData = async (link: any) => {
-      await axiosRepository
-        .getPokemonDetail("https://pokeapi.co/api/v2/pokemon/" + link)
-        .then((res) => {
-          console.log(res.data);
-          setData(res.data);
-        });
-    };
     if (router.isReady) {
-      // getData("https://pokeapi.co/api/v2/pokemon/" + id);
       getData(id);
+      setLoading(false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.isReady]);
 
+  const getData = async (link: any) => {
+    await axiosRepository
+      .getPokemonDetail("https://pokeapi.co/api/v2/pokemon/" + link)
+      .then((res) => {
+        console.log(res.data);
+        setData(res.data);
+      });
+  };
+
   return (
-    <div>
+    <div className="max-w-4xl mx-auto">
       <Navbar />
-      Pokemon detail
-      <div className="bg-slate-400 rounded text-white">
-        Abilities
-        {/* {data.abilities} */}
-      </div>
+      {loading ? null : (
+        <>
+          fuck
+          {/* <div>{data.species.name}</div>
+
+          <div className="bg-slate-400 rounded text-white p-6">
+            Abilities ({data.abilities.length}) :
+            {data.abilities.map((item: any, index: any) => {
+              return (
+                <div>
+                  {index + 1}. {item.ability.name}
+                </div>
+              );
+            })}
+          </div> */}
+        </>
+      )}
     </div>
   );
 }
