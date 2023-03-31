@@ -30,18 +30,24 @@ function PokemonDetail() {
     <div className="max-w-4xl mx-auto">
       <Navbar />
       {loading ? null : (
+        // for loading skeleton
         <>
-          <div>{data.species.name}</div>
-
           <div className="bg-slate-400 rounded text-white p-6">
-            Abilities ({data.abilities.length}) :
-            {data.abilities.map((item: any, index: any) => {
+            <div className="text-3xl mb-3">
+              Pokemon Name
+              {/* {data.species.name} */}
+            </div>
+            Abilities (2) :{/* ({data.abilities.length}) : */}
+            {/* {data.abilities.map((item: any, index: any) => {
               return (
                 <div>
                   {index + 1}. {item.ability.name}
                 </div>
               );
-            })}
+            })} */}
+            <div>List of Abilities</div>
+            {/* i know how to render in react, but not this*/}
+            {/* and still error to deploy to prod */}
           </div>
         </>
       )}
