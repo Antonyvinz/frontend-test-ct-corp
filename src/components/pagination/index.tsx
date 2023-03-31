@@ -14,6 +14,7 @@ function Pagination(props: any) {
           Prev
         </button>
       </div>
+
       <div
       //   className="flex justify-end"
       >
