@@ -37,7 +37,7 @@ function PokemonDetail() {
             Abilities ({data?.abilities?.length}) :
             {data?.abilities?.map((item: any, index: any) => {
               return (
-                <div>
+                <div key={index}>
                   {index + 1}. {item?.ability?.name}
                 </div>
               );
