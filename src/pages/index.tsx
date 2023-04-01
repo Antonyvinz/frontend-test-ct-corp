@@ -27,31 +27,32 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-white mx-5">
       <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            Welcome to Pokedex
+            Welcome to Pokemon Database
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
             cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
           </p>
         </div>
-        <div>
-          List
+        <div className="mt-5">
           {listPokemon.map((pokemon: any) => {
             return (
               <div
                 className="mb-3 bg-gray-500 text-white rounded p-2"
-                key={pokemon.url.match(/\/(\d+)\/$/)[1]}
+                key={pokemon?.url.match(/\/(\d+)\/$/)[1]}
               >
                 <Link
-                  // href={pokemon.url}
-                  href={"/pokedex/" + pokemon.url.match(/\/(\d+)\/$/)[1]}
-                  key={pokemon.url.match(/\/(\d+)\/$/)[1]}
+                  // href={pokemon?.url}
+                  href={"/pokedex/" + pokemon?.url.match(/\/(\d+)\/$/)[1]}
+                  key={pokemon?.url.match(/\/(\d+)\/$/)[1]}
                 >
-                  <h3>{pokemon.name}</h3>
+                  <h3>
+                    {pokemon?.name.slice(0, 1).toUpperCase() + pokemon?.name.slice(1)}
+                  </h3>
                 </Link>
               </div>
             );
