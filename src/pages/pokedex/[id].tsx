@@ -77,7 +77,7 @@ function PokemonDetail() {
             <div className="columns-2 ">
               <div className="h-full">
                 <div>
-                  Types ({data?.types?.length}) :
+                  <span className="">Types ({data?.types?.length}) :</span>
                   {data?.types?.map((item: any, index: any) => {
                     return (
                       <div key={index} className="capitalize">
