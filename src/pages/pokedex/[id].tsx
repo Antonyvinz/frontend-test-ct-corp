@@ -39,7 +39,10 @@ function PokemonDetail() {
         // for loading skeleton
         <>
           <div className="bg-slate-400 rounded text-white p-6 capitalize mx-5">
-            <div className="text-3xl mb-3">Pokemon Name : {data?.species?.name}</div>
+            <div className="text-3xl mb-3 ">
+              Pokemon Name :{" "}
+              <span className="font-semibold text-yellow-100">{data?.species?.name}</span>
+            </div>
             <div className="columns-2 md:columns-4">
               <Image
                 className="w-full aspect-square"
@@ -77,7 +80,9 @@ function PokemonDetail() {
             <div className="columns-2 ">
               <div className="h-full">
                 <div>
-                  <span className="">Types ({data?.types?.length}) :</span>
+                  <div className="font-semibold text-xl mb-1 text-yellow-100">
+                    Types ({data?.types?.length}) :
+                  </div>
                   {data?.types?.map((item: any, index: any) => {
                     return (
                       <div key={index} className="capitalize">
@@ -87,7 +92,9 @@ function PokemonDetail() {
                   })}
                 </div>
                 <div className="mt-5 ">
-                  Abilities ({data?.abilities?.length}) :
+                  <div className="font-semibold text-xl mb-1 text-yellow-100">
+                    Abilities ({data?.abilities?.length}) :{" "}
+                  </div>
                   {data?.abilities?.map((item: any, index: any) => {
                     return (
                       <div key={index}>
@@ -98,7 +105,9 @@ function PokemonDetail() {
                 </div>
               </div>
               <div className="mt-5 h-full">
-                Stats ({data?.stats?.length}) :
+                <div className="font-semibold text-xl mb-1 text-yellow-100">
+                  Stats ({data?.stats?.length}) :
+                </div>
                 {data?.stats?.map((item: any, index: any) => {
                   return (
                     <div key={index}>
@@ -109,7 +118,9 @@ function PokemonDetail() {
               </div>
             </div>
             <div className="mt-5">
-              Moves ({data?.moves?.length}) :
+              <div className="font-semibold text-xl mb-1 text-yellow-100">
+                Moves ({data?.moves?.length}) :
+              </div>
               <div className="columns-2 md:columns-3">
                 {data?.moves?.map((item: any, index: any) => {
                   return (
